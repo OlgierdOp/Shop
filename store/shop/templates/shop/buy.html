@@ -1,0 +1,27 @@
+{%extends 'shop/home.html'%}
+
+{%block navbar%}
+{%endblock%}
+
+{%block content%}
+<div class="item-div">
+    <img class="product-image" src="{{item.pic.url}}">
+    <div class="item-name">
+        <p>{{item.name}}</p>
+    </div>
+    <div class="item-price"><p>{{item.price}}zł</p>
+    </div>
+    <div class="item-description">
+        <p>{{item.description}}</p>
+    </div>
+    <form method="POST">
+        {%csrf_token%}
+        <input type="hidden" name="item_id" value="{{item.id}}">
+        {{form.as_p}}
+        <button type="submit" class='buy-button'>
+            Add to cart
+        </button>
+    </form>
+
+</div>
+{%endblock%}

@@ -1,0 +1,21 @@
+{%extends 'shop/home.html'%}
+
+{%block navbar%}
+{%endblock%}
+{%block content%}
+<div class="wrapper">
+    <div class="fields_container">
+        <form method="POST">
+            {%csrf_token%}
+
+            <p>{{form.username}}</p>
+            <p>{{form.email}}</p>
+            <p>{{form.password1}}</p>
+            <p>{{form.password2}}</p>
+
+
+            <button class="happy-button" type="submit">Register</button>
+        </form>
+    </div>
+</div>
+{%endblock%}
